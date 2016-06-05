@@ -39,6 +39,10 @@ This bot demonstrates many of the core features of Botkit:
     -> http://howdy.ai/botkit
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+process.env.clientId="48203536759.48207056007";
+process.env.clientSecret="276c5437964825563c7556ecffb4e980";
+process.env.port="3000";
+
 var Botkit = require('../lib/Botkit.js');
 
 if (!process.env.clientId || !process.env.clientSecret || !process.env.port) {

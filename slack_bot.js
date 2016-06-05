@@ -63,7 +63,7 @@ This bot demonstrates many of the core features of Botkit:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-
+process.env.token="xoxb-48208740373-ySKkS8kXoL30qQX0pjJCeIZU";
 if (!process.env.token) {
     console.log('Error: Specify token in environment');
     process.exit(1);
@@ -103,17 +103,18 @@ controller.hears(['hello', 'hi'], 'direct_message,direct_mention,mention', funct
     });
 });
 
-controller.hears(['call me (.*)', 'my name is (.*)'], 'direct_message,direct_mention,mention', function(bot, message) {
-    var name = message.match[1];
+controller.hears(['Play (.*)', 'my name is (.*)'], 'direct_message,direct_mention,mention', function(bot, message) {
+    var song = message.match[1];
     controller.storage.users.get(message.user, function(err, user) {
         if (!user) {
             user = {
                 id: message.user,
             };
         }
-        user.name = name;
+        user.name = song;
+
         controller.storage.users.save(user, function(err, id) {
-            bot.reply(message, 'Got it. I will call you ' + user.name + ' from now on.');
+            bot.reply(message, "allo");
         });
     });
 });

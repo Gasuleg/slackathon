@@ -23,6 +23,10 @@ This is a sample Slack Button application that adds a bot to one or many slack t
   Read all about it here:
     -> http://howdy.ai/botkit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+process.env.clientId="48203536759.48207056007";
+process.env.clientSecret="276c5437964825563c7556ecffb4e980";
+process.env.port="3000";
+
 
 /* Uses the slack button feature to offer a real time bot to multiple teams */
 var Botkit = require('../lib/Botkit.js');
